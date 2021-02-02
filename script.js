@@ -7,26 +7,33 @@ todoBtn.addEventListener('click', function (event)
 {
     event.preventDefault();
 
-    const todoDiv = document.createElement('div');
-    todoDiv.className = 'todo';
+    if (todoInput.value.length != 0)
+    {
+        const todoDiv = document.createElement('div');
+        todoDiv.className = 'todo';
 
-    const todoItem = document.createElement('li');
-    todoItem.innerText = todoInput.value;
-    todoItem.className = 'todo-item';
-    todoDiv.appendChild(todoItem);
+        const todoItem = document.createElement('li');
+        todoItem.innerText = todoInput.value;
+        todoItem.className = 'todo-item';
+        todoDiv.appendChild(todoItem);
 
-    const completeBtn = document.createElement('button');
-    completeBtn.innerHTML = '<i class="fas fa-check"></i>';
-    completeBtn.className = 'complete-btn';
-    todoDiv.appendChild(completeBtn);
+        const completeBtn = document.createElement('button');
+        completeBtn.innerHTML = '<i class="fas fa-check"></i>';
+        completeBtn.className = 'complete-btn';
+        todoDiv.appendChild(completeBtn);
 
-    const DeleteBtn = document.createElement('button');
-    DeleteBtn.innerHTML = '<i class="far fa-trash-alt"></i>';
-    DeleteBtn.className = 'delete-btn';
-    todoDiv.appendChild(DeleteBtn);
+        const DeleteBtn = document.createElement('button');
+        DeleteBtn.innerHTML = '<i class="far fa-trash-alt"></i>';
+        DeleteBtn.className = 'delete-btn';
+        todoDiv.appendChild(DeleteBtn);
 
-    todoList.appendChild(todoDiv);
-    todoInput.value = "";
+        todoList.appendChild(todoDiv);
+        todoInput.value = "";
+    }
+    else
+    {
+        alert('Give me a task.')
+    }
 });
 
 
